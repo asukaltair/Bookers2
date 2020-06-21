@@ -1,9 +1,11 @@
 <div class="container">
 	<div class="row">
 
+		
+
 		<div class="col-xs-3">
 
-			<%= render 'users/info', users: @users, books: @books %>
+			<%= render 'users/info', user: @user, book: @book %>
 
 		</div>
 
@@ -14,7 +16,7 @@
 				<tbody>
 
 					<tr>
-						<td><%= attachment_image_tag @book.user, :profile_image, :fill, 40, 40, format: 'jpeg', fallback: 'no_image.jpg' %></td>
+						<td><%= attachment_image_tag @book.user, :profile_image, size: "40x40", format: 'jpeg', fallback: 'no_image.jpg' %></td>
 						<td>
 							<%= @book.title %>
 						</td>
