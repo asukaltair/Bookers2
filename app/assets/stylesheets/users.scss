@@ -1,3 +1,53 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+/*
+ *= require_tree .
+ *= require_self
+*/
+
+table {
+	width: 100%;
+}
+
+.user-show, .book-show {
+	padding: 10px 5px;
+	border-top: 1px solid #dddddd;
+}
+
+.edit-user {
+	width: 100%;
+	border: 1px solid #dddddd;
+	margin: 5px;
+}
+
+label {
+	display: block;
+	margin: 5px 0;
+}
+
+.new-book-form {
+	width: 100%;
+}
+
+.new-book-submit {
+	width: 100%;
+	margin: 10px 0;
+}
+
+.book-show-head, .user-show-head {
+	padding-bottom: 5px;
+}
+
+.edit-user-page {
+	margin: 0 150px;
+}
+
+.edit-user-form {
+	margin: 5px 0;
+}
+
+.edit-user-title {
+	display: inline-block;
+}

@@ -1,37 +1,39 @@
 <h2>User info</h2>
-<%= attachment_image_tag @user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg" %>
-<div class="row name">
-	<div class="col-xs-7">
-		name
-	</div>
-	<div class="col-xs-5">
-		<%= @user.name %>
-	</div>
-</div>
-<div class="row introduction">
-	<div class="col-xs-7">
-		introduction
-	</div>
-	<div class="col-xs-5">
-		<%= @user.introduction %>
-	</div>
-</div>
-<div class="edit-user">
-	<%= link_to edit_user_path(@user) do %>
-		<i class="fas fa-wrench"></i>
+<%= attachment_image_tag user, :profile_image, size: "100x100", format: 'jpeg', fallback: "no_image.jpg" %>
+
+<table>
+	<tr>
+		<th class="user-show">name</th>
+		<th class="user-show"><%= user.name %></th>
+	</tr>
+	<tr>
+		<th class="user-show">introduction</th>
+		<th class="user-show"><%= user.introduction %></th>
+	</tr>
+</table>
+
+<div class="edit-user btn">
+	<% if user.id == current_user.id %>
+		<%= link_to edit_user_path(user) do %>
+			<i class="fas fa-wrench"></i>
+		<% end %>
+	<% else %>
+		<%= link_to user_path(current_user) do %>
+			<i class="fas fa-wrench"></i>
+		<% end %>
 	<% end %>
 </div>
 
 <h2>New book</h2>
 
-	<%= form_for(@book) do |f| %>
+	<%= form_for(book) do |f| %>
 
 		<label>Title</label>
-		<%= f.text_field :title %>
+		<%= f.text_field :title, class:"new-book-form" %>
 
 		<label>Opinion</label>
-		<%= f.text_area :body %>
+		<%= f.text_area :body, class:"new-book-form" %>
 
-		<%= f.submit "Create Book" %>
+		<%= f.submit "Create Book", class:"btn btn-primary new-book-submit" %>
 
 	<% end %>

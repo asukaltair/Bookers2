@@ -14,7 +14,7 @@
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
-          <a class="navbar-brand" href="#">Bookers</a>
+          <div class="title-bookers">Bookers</div>
         </div>
         <ul class="nav navbar-nav navbar-right">
           <% if user_signed_in? %>
@@ -24,9 +24,9 @@
             <li><%= link_to "logout", destroy_user_session_path, method: :delete %></li>
           <% else %>
             <li><%= link_to 'Home', root_path %></li>
-            <li><%= link_to 'About'  %></li>
-            <li><a href="#">sign up</a></li>
-            <li><a href="#">log in</a></li>
+            <li><%= link_to 'About', home_about_path %></li>
+            <li><%= link_to 'sign up', new_user_registration_path %></li>
+            <li><%= link_to 'login', new_user_session_path %></li>
           <% end %>
         </ul>
       </div>
@@ -35,5 +35,9 @@
 
     
     <%= yield %>
+
+    <div class="footer">
+      CopyRight Infratop.inc
+    </div>
   </body>
 </html>
